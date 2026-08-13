@@ -1,0 +1,22 @@
+verifiable-intent-js
+Copyright 2026 Miguel Velasquez and contributors
+
+This product is an independent TypeScript implementation of the Verifiable Intent
+specification. It is licensed under the Apache License, Version 2.0.
+
+Verifiable Intent is an open specification and reference implementation by the
+agent-intent project:
+
+  - Specification: https://verifiableintent.dev
+  - Upstream repository: https://github.com/agent-intent/verifiable-intent
+    (Apache License, Version 2.0)
+
+This package is a community initiative. It is NOT an official agent-intent release
+and is NOT affiliated with, endorsed by, or sponsored by the agent-intent project.
+It tracks the Verifiable Intent specification and aims for byte/verdict
+compatibility with the upstream reference, but any errors are our own.
+
+Portions of the design, the credential/layer model, and the conformance test
+vectors (test-vectors/vectors.json) derive from the upstream Verifiable Intent
+project and remain under its Apache-2.0 license. This implementation has been
+independently written and modified for standalone TypeScript distribution.

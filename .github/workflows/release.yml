@@ -1,0 +1,39 @@
+name: Release
+
+# Publishes verifiable-intent-js to npm with provenance (SLSA) when a
+# `v*` tag is pushed. Uses npm Trusted Publishing (OIDC) - no long-lived
+# NPM_TOKEN. Set the trusted publisher for this repo/workflow on npmjs.com first:
+#   npm package settings -> Publishing access -> Trusted Publisher (GitHub Actions).
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write # required for npm provenance / OIDC trusted publishing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm run check:pkg
+      - run: pnpm test
+
+      # Trusted publishing (OIDC): no NODE_AUTH_TOKEN needed.
+      - run: npm publish --provenance --access public
