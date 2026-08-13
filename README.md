@@ -6,13 +6,19 @@ SD-JWT delegation chain (Issuer → User → Agent) that produces cryptographic 
 an AI agent's commercial actions stayed within the scope a human explicitly
 delegated.
 
-> **Independent & unofficial (pre-1.0).** This is a community project by
-> [@miguelvelasquezdev](https://github.com/miguelvelasquezdev). It is **not** an
-> official [agent-intent](https://github.com/agent-intent/verifiable-intent)
-> release and is **not** affiliated with or endorsed by that project. It tracks
-> the Verifiable Intent specification and aims for compatibility with the upstream
-> reference, but any errors are our own. APIs may change; see
-> [`NOTICE`](./NOTICE) for attribution.
+> **Independent & unofficial (pre-1.0).** This is my own implementation
+> ([@miguelvelasquezdev](https://github.com/miguelvelasquezdev)) of the Verifiable
+> Intent credential format, written by following the official **SD-JWT
+> specifications** (IETF SD-JWT) and the
+> [**Verifiable Intent** documentation](https://verifiableintent.dev), and by
+> mirroring the upstream **Python reference implementation** for byte/verdict
+> compatibility. It is **not** an official
+> [agent-intent](https://github.com/agent-intent/verifiable-intent) release and is
+> **not** affiliated with or endorsed by that project; any errors are my own. APIs
+> may change; see [`NOTICE`](./NOTICE) for attribution.
+>
+> _Built with AI assistance (Claude) and reviewed/validated by me, a payments
+> software engineer (@yuno)._
 
 It has **zero runtime dependencies** and uses only Web-standard APIs — WebCrypto
 (`crypto.subtle`) for ES256 and SHA-256, `crypto.getRandomValues` for salts,

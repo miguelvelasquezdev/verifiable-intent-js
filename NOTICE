@@ -19,4 +19,10 @@ compatibility with the upstream reference, but any errors are our own.
 Portions of the design, the credential/layer model, and the conformance test
 vectors (test-vectors/vectors.json) derive from the upstream Verifiable Intent
 project and remain under its Apache-2.0 license. This implementation has been
-independently written and modified for standalone TypeScript distribution.
+independently written for standalone TypeScript distribution: it was authored by
+following the official SD-JWT specifications (IETF SD-JWT) and the Verifiable
+Intent documentation, and by mirroring the upstream Python reference
+implementation for byte/verdict compatibility.
+
+Development note: this package was built with AI assistance (Claude) and reviewed
+and validated by the author, a payments software engineer (@yuno).
